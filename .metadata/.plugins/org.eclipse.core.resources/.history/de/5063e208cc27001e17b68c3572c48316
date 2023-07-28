@@ -1,0 +1,36 @@
+//Modifique el algoritmo anterior para calcular el nuevo salario de un obrero basándose en la siguiente tabla
+import javax.swing.JOptionPane;
+public class SalarioEmpeado4 {
+
+	public static void main(String[] args) {
+		String mensaje,categoria;
+        double salario, salarioTotal;
+        salario=Double.parseDouble(JOptionPane.showInputDialog("Digite su salario"));
+        categoria=JOptionPane.showInputDialog("¿A que categoria pertenece?");
+        if(categoria.equals("a")) {
+        	salarioTotal=salario*0.30+salario;
+        	mensaje= "SALARIO CON INCREMENTO\n";
+            mensaje+= "Salario actual: "+salario+"\n";
+            mensaje+= "Salario con incremento: "+salarioTotal;
+            JOptionPane.showInternalMessageDialog(null, mensaje, "INFORMATION_MENSSAGE",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(categoria.equals("b")) {
+        	salarioTotal=salario*0.20+salario;
+        	mensaje= "SALARIO CON INCREMENTO\n";
+            mensaje+= "Salario actual: "+salario+"\n";
+            mensaje+= "Salario con incremento: "+salarioTotal;
+            JOptionPane.showInternalMessageDialog(null, mensaje, "INFORMATION_MENSSAGE",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(categoria.equals("c")) {
+        	salarioTotal=salario*0.10+salario;
+        	mensaje= "SALARIO CON INCREMENTO\n";
+            mensaje+= "Salario actual: "+salario+"\n";
+            mensaje+= "Salario con incremento: "+salarioTotal;
+            JOptionPane.showInternalMessageDialog(null, mensaje, "INFORMATION_MENSSAGE",JOptionPane.INFORMATION_MESSAGE);
+        } else {
+        	JOptionPane.showInternalMessageDialog(null, "Categoria NO valia", "ERROR_MENSSAGE",JOptionPane.ERROR_MESSAGE);
+        }
+		
+	}
+
+}

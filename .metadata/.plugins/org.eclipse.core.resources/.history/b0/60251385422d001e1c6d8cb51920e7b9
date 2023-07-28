@@ -1,0 +1,10 @@
+
+public class Ejemplo {
+
+	public static void main(String[] args) {
+		
+		int numUno=integer.parseint();
+
+	}
+
+}
