@@ -2,8 +2,12 @@ import javax.swing.JOptionPane;
 public class lavaAutos {
 
 	public static void main(String[] args) {
-			int codigoMenuP=0, codigoAuto=0, codigoCampe=0, codigoCamio=0;
+			int codigoMenuP=0, codigoAuto=0, codigoCampe=0, codigoCamio=0,anoActual=2023, anoVehiculo=0;
 			String menu="", menuAuto="",menuCampe="", menuCamio="";
+			double incremento=0.2, precioFinal;
+			
+			anoVehiculo=Integer.parseInt((JOptionPane.showInputDialog("ingrese el modelo del vehiculo")));
+			
 			
 			do {
 				menu="";
@@ -21,15 +25,31 @@ public class lavaAutos {
 						menuAuto="Menu Automoviles\n";
 						menuAuto+="1. Pequeño\n";
 						menuAuto+="2. Mediano\n";
-						menuAuto+="3. De lojo\n";
+						menuAuto+="3. De lujo\n";
 						menuAuto+="4. Regresar\n";
 						
 						codigoAuto=Integer.parseInt(JOptionPane.showInputDialog(menuAuto));
 						
 						switch (codigoAuto) {
-						case 1: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de auto pequeño tendra un costo de $"+4000); break;
-						case 2: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de auto mediano, tendra un costo de $"+5000); break;
-						case 3: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de auto de lujo tendra un costo de $"+6000); break;
+						case 1: 
+							if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(4000*incremento)+4000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de aunto pequeño, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de auto pequeño, tendra un costo de: $"+4000);
+							}; break;
+						case 2: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(5000*incremento)+5000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de aunto mediano, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de auto mediano, tendra un costo de: $"+5000);
+							}; break;
+						case 3: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(6000*incremento)+6000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de aunto de lujo, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de auto de lujo, tendra un costo de: $"+6000);
+							}; break;
 						case 4: break;
 
 						default:
@@ -45,15 +65,25 @@ public class lavaAutos {
 				case 2:
 					do {
 						menuCampe="Menu Campero\n\n";
-						menuCampe+="Sencillo\n";
-						menuCampe+="de lujo\n";
-						menuCampe+="Regresar";
+						menuCampe+="1. Sencillo\n";
+						menuCampe+="2. de lujo\n";
+						menuCampe+="3. Regresar";
 						
 						codigoCampe=Integer.parseInt(JOptionPane.showInputDialog(menuCampe));
 						
 						switch (codigoCampe) {
-						case 1: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de campero sencillo tendra un costo de $"+5000); break;
-						case 2: JOptionPane.showMessageDialog(null, "SE ha seleccionado tipio de Campero de lujo tendra un costo de $"+8000); break;
+						case 1: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(5000*incremento)+5000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de Campero sencillo, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de auto Campero sencillo, tendra un costo de: $"+5000);
+							}; break;
+						case 2: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(8000*incremento)+8000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de Campero de lujo, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de Campero de lujo, tendra un costo de: $"+8000);
+							}; break;
 						case 3: break;
 
 						default:
@@ -70,13 +100,23 @@ public class lavaAutos {
 						menuCamio="Menu Camioneta\n\n";
 						menuCamio+="1. Cabina sencilla\n";
 						menuCamio+="2. Doble cabina\n";
-						menuCamio+="Regresar";
+						menuCamio+="3. Regresar";
 						
 						codigoCamio=Integer.parseInt(JOptionPane.showInputDialog(menuCamio));
 						
 						switch (codigoCamio) {
-						case 1: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de camioneta de cabina sencilla tendra un costo de $"+6000); break;
-						case 2: JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de camioneta de doble cabina tendra un costo de $"+8000); break;	
+						case 1: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(6000*incremento)+6000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de Camioneta sencilla, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de auto pequeño, tendra un costo de: $"+6000);
+							}; break;
+						case 2: if(anoActual-anoVehiculo>=8) {
+							 precioFinal=(8000*incremento)+8000;
+							 JOptionPane.showMessageDialog(null, "Se ha seleccionado tipo de Camioneta de doble cabina, tendra un costo de: $"+precioFinal);
+							}else{
+								JOptionPane.showMessageDialog(null, "Se ha sellecionado tipo de Camioneta de doble cabina, tendra un costo de: $"+8000);
+							}; break;	
 
 						default:
 							JOptionPane.showMessageDialog(null, "No corresponde a" + "un codigo valido","ADVERTENCIA", JOptionPane.WARNING_MESSAGE );
